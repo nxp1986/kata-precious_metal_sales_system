@@ -4,7 +4,14 @@ import java.math.BigDecimal;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 贵金属商品容器
+ * 初始化贵金属商品
+ */
 public class ProductsStore {
+    /**
+     * 贵金属商品存储集合
+     */
     private static Map<String, PreciousMetal> productMap = new HashMap<String, PreciousMetal>();
     static {
         PreciousMetal preciousMetal001001 = new PreciousMetal("001001","世园会五十国钱币册", "册", new BigDecimal(998));
@@ -36,6 +43,11 @@ public class ProductsStore {
         productMap.put("002003", preciousMeta002003);
     }
 
+    /**
+     * 根据贵金属商品编号获取贵金属商品实体
+     * @param productNo
+     * @return
+     */
     public static PreciousMetal getPreciousMetalByNo (String productNo) {
         return productMap.get(productNo);
     }

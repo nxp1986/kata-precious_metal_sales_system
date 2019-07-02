@@ -3,6 +3,10 @@ package com.coding.sales.entity;
 import java.util.HashMap;
 import java.util.Map;
 
+/**
+ * 用户信息池
+ * 初始化系统用户信息
+ */
 public class UserPool {
     private static Map<String, User> userMap = new HashMap<String, User>();
     static {
@@ -16,6 +20,11 @@ public class UserPool {
         userMap.put(userz.getCardNo(), userz);
     }
 
+    /**
+     * 根据用户卡号获取用户信息
+     * @param cardNo
+     * @return
+     */
     public static User getUserByCardNo(String cardNo) {
         return userMap.get(cardNo);
     }

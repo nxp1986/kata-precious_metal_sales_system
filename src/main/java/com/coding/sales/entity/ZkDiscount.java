@@ -4,8 +4,17 @@ import com.coding.sales.input.OrderItemCommand;
 
 import java.math.BigDecimal;
 
+/**
+ * 折扣优惠活动实现类
+ */
 public class ZkDiscount  implements Discount {
+    /**
+     * 折扣
+     */
     private BigDecimal rebate;
+    /**
+     * 描述
+     */
     private String desc;
     public ZkDiscount (BigDecimal rebate, String desc) {
         this.rebate = rebate;

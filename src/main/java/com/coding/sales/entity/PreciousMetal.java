@@ -6,6 +6,9 @@ import java.math.BigDecimal;
 import java.util.ArrayList;
 import java.util.List;
 
+/**
+ * 贵金属实体对象
+ */
 public class PreciousMetal {
     /**
      * 商品编号
@@ -74,6 +77,10 @@ public class PreciousMetal {
         this.dicountList = dicountList;
     }
 
+    /**
+     * 增加支持优惠 初始化贵金属产品容器使用
+     * @param dicount
+     */
     public void addDicount(Discount dicount) {
         if(dicountList == null) {
             dicountList = new ArrayList<Discount>();
@@ -81,6 +88,12 @@ public class PreciousMetal {
         this.dicountList.add(dicount);
     }
 
+    /**
+     * 获取当前商品最大幅度优惠
+     * @param orderItemCommand
+     * @param discounts
+     * @return
+     */
     public Discount getBestDiscount(OrderItemCommand orderItemCommand, List<String> discounts) {
         if(dicountList != null && dicountList.size() > 0) {
             BigDecimal reduceAmount = BigDecimal.ZERO;

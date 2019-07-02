@@ -3,10 +3,25 @@ package com.coding.sales.entity;
 import java.math.BigDecimal;
 import java.math.RoundingMode;
 
+/**
+ * 用户实体类
+ */
 public class User {
+    /**
+     * 用户名
+     */
     private String name;
+    /**
+     * 用户等级
+     */
     private String level;
+    /**
+     * 用户卡号
+     */
     private String cardNo;
+    /**
+     * 用户积分
+     */
     private int integral;
 
     public User(String name, String level, String cardNo, int integral) {
@@ -47,6 +62,11 @@ public class User {
         this.integral = integral;
     }
 
+    /**
+     * 根据最终所付金额更新用户积分
+     * @param amount
+     * @return
+     */
     public int updateIntegral(BigDecimal amount) {
         int newIntegral = integral;
         if(integral < 10000) {
@@ -64,6 +84,10 @@ public class User {
         return add;
     }
 
+    /**
+     * 根据最新积分更新用户等级
+     * @param newIntegral
+     */
     private void updateLevel(int newIntegral) {
         if(newIntegral < 10000) {
             this.level = "普卡";
